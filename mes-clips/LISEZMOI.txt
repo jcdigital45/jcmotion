@@ -1,0 +1,1 @@
+Mets ici tes clips (effets, transitions, fonds verts, logos animés, musiques), puis lance : python scripts/import_clips.py

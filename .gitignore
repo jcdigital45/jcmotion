@@ -1,0 +1,10 @@
+node_modules/
+work/
+out/
+public/input.mp4
+public/voice.m4a
+public/sfx/
+public/lib/
+public/music/
+mes-clips/*
+!mes-clips/LISEZMOI.txt
