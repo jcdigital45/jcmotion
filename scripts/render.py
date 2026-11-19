@@ -102,6 +102,6 @@ if a.stills:
 else:
     os.makedirs(os.path.dirname(j(a.out)), exist_ok=True)
     r = subprocess.run(base + ['render', 'src/index.ts', 'JCMotion', j(a.out), '--props=work/plan.json',
-                               '--codec=h264', '--crf=20', '--x264-preset=veryfast', '--audio-codec=aac', '--log=error'], cwd=P, env=env)
+                               '--codec=h264', '--crf=18', '--x264-preset=veryfast', '--audio-codec=aac', '--log=error'], cwd=P, env=env)
     if r.returncode: sys.exit(r.returncode)
     print('Rendu :', j(a.out))

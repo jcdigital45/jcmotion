@@ -50,13 +50,14 @@ const Stage: React.FC<{ sc: Scene; format: Format; voiceMode: boolean; children:
       ? { left: 70, right: 70, top: height * 0.12, bottom: height * 0.24 }
       : split
       ? { left: width * 0.05, width: width * 0.53, top: height * 0.1, bottom: height * 0.2 }
-      : { left: width * (wide ? 0.12 : 0.2), right: width * (wide ? 0.12 : 0.2), top: height * 0.1, bottom: height * 0.2 };
+      : { left: width * (wide ? 0.18 : 0.24), right: width * (wide ? 0.18 : 0.24), top: height * 0.12, bottom: height * 0.22 };
+  const zoom = format === '16:9' && !split ? 1.35 : 1; // voix seule en 16:9 : cartes plus grandes, bien centrées
   return (
     <AbsoluteFill style={{ opacity: o }}>
       <div
         style={{
           position: 'absolute', ...box, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column',
-          transform: `translateY(${(1 - p) * 90}px) scale(${0.93 + 0.07 * p})`, opacity: clamp(p * 1.6),
+          transform: `translateY(${(1 - p) * 90}px) scale(${(0.93 + 0.07 * p) * zoom})`, opacity: clamp(p * 1.6),
         }}
       >
         {children}
@@ -322,7 +323,7 @@ export const HookOverlay: React.FC<P> = ({ sc, format }) => {
   return (
     <AbsoluteFill style={{ opacity: o }}>
       <div style={{ position: 'absolute', left: 0, right: 0, top: 0, height: height * (big ? 0.42 : 0.5), background: 'linear-gradient(180deg, rgba(0,0,0,0.75), rgba(0,0,0,0))' }} />
-      <div style={{ position: 'absolute', left: big ? 70 : width * 0.06, right: big ? 70 : width * 0.4, top: big ? height * 0.13 : height * 0.12, textAlign: big ? 'center' : 'left', fontFamily: T.ui, fontWeight: 800, fontSize: big ? 86 : 78, letterSpacing: '-0.045em', lineHeight: 1.02, color: T.text, transform: `translateY(${(1 - p) * -40}px)`, opacity: p, textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
+      <div style={{ position: 'absolute', left: big ? 70 : width * 0.1, right: big ? 70 : width * 0.1, top: big ? height * 0.13 : height * 0.3, textAlign: 'center', fontFamily: T.ui, fontWeight: 800, fontSize: big ? 86 : 78, letterSpacing: '-0.045em', lineHeight: 1.02, color: T.text, transform: `translateY(${(1 - p) * -40}px)`, opacity: p, textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
         <Accent text={sc.title ?? sc.text ?? ''} />
       </div>
     </AbsoluteFill>

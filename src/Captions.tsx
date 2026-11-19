@@ -86,7 +86,7 @@ export const Captions: React.FC<{
     <div style={{ position: 'absolute', left: 0, right: 0, bottom: height * 0.07, display: 'flex', justifyContent: 'center', opacity: p }}>
       <div
         style={{
-          fontFamily: T.ui, fontWeight: 600, fontSize: 44, color: '#FFFFFF', padding: '10px 22px', borderRadius: 12,
+          fontFamily: T.ui, fontWeight: 700, fontSize: 56, color: '#FFFFFF', padding: '10px 22px', borderRadius: 12,
           background: overFull && !active.some((s) => s.type === 'frame') ? 'transparent' : 'rgba(0,0,0,0.55)', maxWidth: width * 0.8, textAlign: 'center',
           letterSpacing: '-0.01em', textShadow: '0 2px 10px rgba(0,0,0,0.6)',
         }}

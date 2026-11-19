@@ -124,7 +124,7 @@ export const ProcessScene: React.FC<P> = ({ sc, format }) => {
   const path = `M ${lx + 40} ${ly + 30} Q ${cx} ${ly - R * 1.2} ${rx - 40} ${ly + 30}`;
   const isImg = sc.center && /\.(png|jpe?g|webp)$/i.test(sc.center);
   const label = (txt: string | undefined, x: number, p: number) => txt ? (
-    <div style={{ position: 'absolute', left: x - 260, width: 520, top: ly - 10, textAlign: 'center', transform: `translateY(${(1 - p) * 30}px)`, opacity: p }}>
+    <div style={{ position: 'absolute', left: x - 260, width: 520, top: ly + 50, textAlign: 'center', transform: `translateY(${(1 - p) * 30}px)`, opacity: p }}>
       <div style={{ fontFamily: T.title, fontWeight: 700, fontSize: vert ? 46 : 40, color: T.text }}>{txt}</div>
       <div style={{ margin: '8px auto 0', width: 90 * p, height: 5, borderRadius: 3, background: T.lime }} />
     </div>
